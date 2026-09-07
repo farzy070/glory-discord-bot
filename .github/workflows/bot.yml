@@ -14,12 +14,10 @@ jobs:
 
       - name: Bestanden controleren
         run: |
-          echo "Huidige map:"
+          echo "MAP:"
           pwd
-          echo "Bestanden:"
-          ls -la
-          echo "Alle bestanden:"
-          find . -maxdepth 3 -type f
+          echo "BESTANDEN:"
+          find . -type f
 
       - name: Python installeren
         uses: actions/setup-python@v5
