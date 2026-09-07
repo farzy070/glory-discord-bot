@@ -3,8 +3,6 @@ name: GLORY Discord Bot
 on:
   workflow_dispatch:
   push:
-    branches:
-      - "1"
 
 jobs:
   run-bot:
@@ -13,8 +11,15 @@ jobs:
     steps:
       - name: Code ophalen
         uses: actions/checkout@v4
-        with:
-          ref: "1"
+
+      - name: Bestanden controleren
+        run: |
+          echo "Huidige map:"
+          pwd
+          echo "Bestanden:"
+          ls -la
+          echo "Alle bestanden:"
+          find . -maxdepth 3 -type f
 
       - name: Python installeren
         uses: actions/setup-python@v5
